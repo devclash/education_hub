@@ -1,7 +1,6 @@
 from django.shortcuts import redirect, render
 from .forms import UserRegisterForm
 from django.contrib import messages
-import sweetify
 
 # Create your views here.
 

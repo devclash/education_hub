@@ -20,3 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
 ]
+
+# Changed some default title from django admin panel
+admin.site.site_header = 'Education Hub Admin'
+admin.site.site_title = 'Education Hub Admin Portal'
+admin.site.index_title = 'Welcome to Education Hub Admin Portal'
