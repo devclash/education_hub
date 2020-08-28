@@ -122,11 +122,34 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files (CSS, JavaScript)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 STATIC_URL = '/static/'
+
+# Media files (Images, Files)
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Crispy template pack
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Ckeditor configurations
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ["Bold", "Italic"],
+            ['NumberedList', 'BulletedList', 'JustifyLeft', 'JustifyCenter'],
+            ["Image", "Link", "Unlink", 'HorizontalRule', ],
+            ["Subscript", "Superscript"], ['Undo', 'Redo'], ["Source"],
+            ["Maximize"]
+        ],
+    }
+}
