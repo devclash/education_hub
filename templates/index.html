@@ -1,5 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %} {% for question in questions %}
 
-{% block content %}
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident, repudiandae velit quasi reprehenderit asperiores nemo. Officiis, illum, quo saepe commodi nemo ipsum voluptates ipsa fugit suscipit fugiat vitae at dolorum.
-{% endblock content %}
+<div>
+  <a class="mr-2" href="">{{ question.author }}</a>
+  <small class="text-muted">{{ question.date_posted|date:"M d, Y"}}</small>
+</div>
+<h2><a class="article-title" href="">{{ question.title }}</a></h2>
+<p class="article-content">{{ question.description | truncatewords:30 }}</p>
+
+{% endfor %} {% endblock content %}
