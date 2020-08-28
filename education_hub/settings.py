@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'questions',
     'notes',
+    'feedbacks',
     'crispy_forms',
     'ckeditor',
 ]
