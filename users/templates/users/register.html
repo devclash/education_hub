@@ -1,24 +1,15 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
-
-{% block content %}
+{% load crispy_forms_tags %} {% include 'css.html' %}
 
 <!-- Default form register -->
-<form class="text-center border border-light" action="" method = "POST">
-    {% csrf_token %}
-    <div class="form-group">
+<form class="text-center border border-light" action="" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
     <p class="h4 mb-4">Sign up</p>
 
     {{form|crispy}}
+  </div>
 
-    </div>
-
-
-    <!-- Sign up button -->
-    <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
-
-
+  <!-- Sign up button -->
+  <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
 </form>
 <!-- Default form register -->
-
-{% endblock content %}
