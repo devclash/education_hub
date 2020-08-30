@@ -1,4 +1,4 @@
-{% load crispy_forms_tags %} {% include 'css.html' %}
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
 
 <!-- Default form register -->
 <form class="text-center border border-light" action="" method="POST">
@@ -13,3 +13,5 @@
   <button class="btn btn-info my-4 btn-block" type="submit">Register</button>
 </form>
 <!-- Default form register -->
+
+{% endblock content %}

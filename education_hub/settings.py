@@ -123,6 +123,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Login redirect Url
+LOGIN_REDIRECT_URL = 'question_list'
 
 # Static files (CSS, JavaScript)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
