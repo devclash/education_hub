@@ -5,6 +5,8 @@
   <small class="text-muted">{{ question.date_posted|date:"M d, Y"}}</small>
 </div>
 <h2><a class="article-title" href="">{{ question.title }}</a></h2>
-<p class="article-content">{{ question.description | truncatewords:30 }}</p>
+<p class="article-content">
+  {{ question.description | truncatewords:30 | safe }}
+</p>
 
 {% endfor %} {% endblock content %}

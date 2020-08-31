@@ -1,20 +1,59 @@
 <!-- Start of Navbar -->
+
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Education Hub</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'question_list' %}">Home <span class="sr-only"></span></a>
+        <a class="nav-link" href="{% url 'question_list' %}"
+          >Home <span class="sr-only"></span
+        ></a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0"">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
     </form>
+
+    <!-- Navbar Right Side -->
+    {% if user.is_authenticated %}
+
+    <div class="navbar-nav ml-auto mt-lg-0 mx-2">
+      <a class="btn btn-outline-info my-sm-0 mr-2" href="">Profile</a>
+      <a class="btn btn-outline-danger my-sm-0" href="{% url 'logout' %}"
+        >Logout</a
+      >
+    </div>
+
+    {% else %}
+
+    <div class="navbar-nav ml-auto mt-lg-0 mx-2">
+      <a class="btn btn-outline-info my-sm-0 mr-2" href="{% url 'login' %}"
+        >Log In</a
+      >
+      <a class="btn btn-outline-info my-sm-0" href="{% url 'register' %}"
+        >Sign Up</a
+      >
+    </div>
+
+    {% endif %}
+
+    <!-- End of Navbar Right Side -->
   </div>
 </nav>
+
 <!-- End of Navbar-->
