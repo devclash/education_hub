@@ -2,6 +2,9 @@
 
 <form action="" method="POST">
   {% csrf_token %} {{form.media}} {{form|crispy}}
+  <div class="form-group">
+    <button class="btn btn-info" type="submit">Post Your Question</button>
+  </div>
 </form>
 
 {% endblock content %}
