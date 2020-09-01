@@ -123,8 +123,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Login redirect Url
-LOGIN_REDIRECT_URL = 'question_list'
 
 # Static files (CSS, JavaScript)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -142,6 +140,10 @@ MEDIA_URL = '/media/'
 # Crispy template pack
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Login redirect Url and Login Url
+LOGIN_REDIRECT_URL = 'question_list'
+LOGIN_URL = 'login'
 
 # Ckeditor configurations
 
