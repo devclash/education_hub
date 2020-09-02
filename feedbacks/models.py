@@ -13,4 +13,4 @@ class Feedback(models.Model):
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-        return self.title + 'by' + self.author
+        return self.title
