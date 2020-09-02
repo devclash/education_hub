@@ -6,6 +6,9 @@
 </div>
 <h2><a class="">{{ object.title }}</a></h2>
 <p class="">{{ object.description | safe }}</p>
+
+<div>asd asd {{object.comment_set.all}}</div>
+
 {% if object.author == user %}
 <a class="btn btn-info" href="{% url 'question_update' object.id %}">
   Update
