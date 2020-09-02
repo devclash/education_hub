@@ -11,9 +11,16 @@ from questions.models import Question
 
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    description = models.TextField()
+    # This question is not required after including the models below
+    # question = models.ForeignKey(Question, on_delete=models.CASCADE)
+
+    # Used for content types (Generic relations)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+
+    comment = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return str(self.author) + ' commented on ' + str(self.question)
+        return str(self.author) + ' commented '
