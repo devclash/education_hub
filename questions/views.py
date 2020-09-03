@@ -46,7 +46,7 @@ class QuestionDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         content_type = ContentType.objects.get_for_model(Question)
         question = Question.objects.get(pk=self.kwargs.get('pk'))
-        context['comment'] = Comment.objects.filter(
+        context['comments'] = Comment.objects.filter(
             content_type=content_type, object_id=question.id)
         return context
 
