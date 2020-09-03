@@ -6,6 +6,26 @@
 </div>
 <h2><a class="">{{ object.title }}</a></h2>
 <p class="">{{ object.description | safe }}</p>
+
+<!-- Comment Section -->
+
+<div>
+  <p class="lead">Comments</p>
+  {% for comment in comments %}
+  <div>
+    {{comment.comment}}
+
+    <br />
+
+    by {{ comment.author }} {{ comment.date_posted | timesince }} ago
+
+    <hr />
+  </div>
+  {% endfor %}
+</div>
+
+<!-- End of Comment Section -->
+
 {% if object.author == user %}
 <a class="btn btn-info" href="{% url 'question_update' object.id %}">
   Update
